@@ -20,31 +20,33 @@ class _SetStateExampleAppState extends State<SetStateExampleApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('setState state management example app'),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            _message,
-            style: TextStyle(fontSize: 26),
-            overflow: TextOverflow.clip,
-          ),
-          ElevatedButton(
-              onPressed: _onGetByLocationPressed,
-              child: Text('get Weather by Location')),
-          TextField(
-            decoration: InputDecoration(hintText: 'city name'),
-            onChanged: (t) {
-              _cityName = t;
-            },
-          ),
-          ElevatedButton(
-              onPressed: _onGetByCityNamePressed,
-              child: Text('get Weather by City Name')),
-        ],
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('setState state management example app'),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              _message,
+              style: TextStyle(fontSize: 26),
+              overflow: TextOverflow.clip,
+            ),
+            ElevatedButton(
+                onPressed: _onGetByLocationPressed,
+                child: Text('get Weather by Location')),
+            TextField(
+              decoration: InputDecoration(hintText: 'city name'),
+              onChanged: (t) {
+                _cityName = t;
+              },
+            ),
+            ElevatedButton(
+                onPressed: _onGetByCityNamePressed,
+                child: Text('get Weather by City Name')),
+          ],
+        ),
       ),
     );
   }
