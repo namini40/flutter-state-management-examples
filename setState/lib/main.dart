@@ -87,6 +87,9 @@ class _SetStateExampleAppState extends State<SetStateExampleApp> {
   }
 
   Future<void> _onGetByLocationPressed() async {
+    setState(() {
+      _message = 'loading...';
+    });
     Position position = await _determinePosition();
     try {
       final weather = await _apiHandler.getWeatherByLocation(
@@ -99,10 +102,28 @@ class _SetStateExampleAppState extends State<SetStateExampleApp> {
     } catch (e) {
       setState(() {
         _message =
-            'an error occured!\nplease check your net connection and inputs and try again';
+            'an error occurred!\nplease check your net connection and inputs and try again';
       });
     }
   }
 
-  Future<void> _onGetByCityNamePressed() async {}
+  Future<void> _onGetByCityNamePressed() async {
+    setState(() {
+      _message = 'loading...';
+    });
+
+    try {
+      final weather = await _apiHandler.getWeatherByCityName(_cityName);
+
+      setState(() {
+        _message =
+            'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
+      });
+    } catch (e) {
+      setState(() {
+        _message =
+            'an error occurred!\nplease check your net connection and inputs and try again';
+      });
+    }
+  }
 }
