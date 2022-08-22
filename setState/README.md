@@ -1,16 +1,12 @@
 # set_state
 
-A new Flutter project.
+as the simplest state management approach yet powerful one, `setState` simply works as a refresher of a `StatefulWidget`.
+a simple function like following:
+```dart
+setState((){
+  // the code that updates state
+});
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+whenever this method gets called, an anonymous function is called inside it in which all updating code must be located.
+take a look and if you have any questions or updates feel free to create an issue!

@@ -4,7 +4,7 @@ a practice on how to implement different popular state managements and design pa
 ![GitHub](https://img.shields.io/github/license/namini40/flutter-state-management-examples)
 
 ### what you get from this?
-as a flutter developer I wanted to explore different tools to manage state of an example app ([nasWeather]()) and  find out more about new approaches and usecases.
+as a flutter developer I wanted to explore different tools to manage state of an example app and  find out more about new approaches and usecases.
 
 **note** that each part is in one of these stages:
 
@@ -18,7 +18,7 @@ as a flutter developer I wanted to explore different tools to manage state of an
 ## [List of state management approaches](https://docs.flutter.dev/development/data-and-backend/state-mgmt/options)
 - Provider ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
 - Riverpod ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
-- setState ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
+- setState ![GitHub](https://img.shields.io/badge/status-inProgress-blue)
 - InheritedWidget & InheritedModel ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
 - Redux ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
 - Fish-Redux ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
