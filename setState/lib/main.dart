@@ -25,27 +25,30 @@ class _SetStateExampleAppState extends State<SetStateExampleApp> {
         appBar: AppBar(
           title: Text('setState state management example app'),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              _message,
-              style: TextStyle(fontSize: 26),
-              overflow: TextOverflow.clip,
-            ),
-            ElevatedButton(
-                onPressed: _onGetByLocationPressed,
-                child: Text('get Weather by Location')),
-            TextField(
-              decoration: InputDecoration(hintText: 'city name'),
-              onChanged: (t) {
-                _cityName = t;
-              },
-            ),
-            ElevatedButton(
-                onPressed: _onGetByCityNamePressed,
-                child: Text('get Weather by City Name')),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                _message,
+                style: TextStyle(fontSize: 26),
+                overflow: TextOverflow.clip,
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                  onPressed: _onGetByLocationPressed,
+                  child: Text('get Weather by Location')),
+              TextField(
+                decoration: InputDecoration(hintText: 'city name'),
+                onChanged: (t) {
+                  _cityName = t;
+                },
+              ),
+              ElevatedButton(
+                  onPressed: _onGetByCityNamePressed,
+                  child: Text('get Weather by City Name')),
+            ],
+          ),
         ),
       ),
     );
@@ -102,6 +105,7 @@ class _SetStateExampleAppState extends State<SetStateExampleApp> {
             'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
       });
     } catch (e) {
+      print(e);
       setState(() {
         _message =
             'an error occurred!\nplease check your net connection and inputs and try again';
@@ -122,6 +126,7 @@ class _SetStateExampleAppState extends State<SetStateExampleApp> {
             'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
       });
     } catch (e) {
+      print(e);
       setState(() {
         _message =
             'an error occurred!\nplease check your net connection and inputs and try again';

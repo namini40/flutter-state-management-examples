@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 // a lot of details and implementations ignored assuming you know how to handle it.
 class ApiHandler {
   String _createUrlUsingLocation(double lat, double lon) =>
-      'https://api.openweathermap.org/data/2.5/weather?lat=$lat.3&lon=$lon&appid=$apiKeyOpenWeatherMap';
+      'https://api.openweathermap.org/data/2.5/weather?lat=${lat.toStringAsFixed(4)}&lon=${lon.toStringAsFixed(4)}&appid=$apiKeyOpenWeatherMap';
 
   String _createUrlUsingCityName(String cityName) =>
       'https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKeyOpenWeatherMap';
@@ -19,8 +19,7 @@ class ApiHandler {
     final response =
         await http.get(Uri.parse(_createUrlUsingLocation(lat, lon)));
     final body = jsonDecode(response.body);
-    final weather =
-        Weather(double.parse(body['main']['temp']), body['weather'][0]['main']);
+    final weather = Weather(body['main']['temp'], body['weather'][0]['main']);
     return weather;
   }
 
@@ -28,8 +27,7 @@ class ApiHandler {
     final response =
         await http.get(Uri.parse(_createUrlUsingCityName(cityName)));
     final body = jsonDecode(response.body);
-    final weather =
-        Weather(double.parse(body['main']['temp']), body['weather'][0]['main']);
+    final weather = Weather(body['main']['temp'], body['weather'][0]['main']);
     return weather;
   }
 }
