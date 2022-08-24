@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:set_state/screens/home_screen.dart';
+import 'package:set_state/screens/location_screen.dart';
 import 'package:set_state/screens/splash_screen.dart';
 
 void main() {
@@ -11,7 +13,12 @@ class SetStateExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen(),
+      initialRoute: SplashScreen.id,
+      routes: {
+        SplashScreen.id: (_) => SplashScreen(),
+        HomeScreen.id: (_) => HomeScreen(),
+        LocationScreen.id: (_) => LocationScreen()
+      },
     );
   }
 }

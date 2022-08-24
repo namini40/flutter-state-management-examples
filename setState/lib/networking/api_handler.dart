@@ -1,7 +1,9 @@
 import 'dart:convert';
-import 'package:set_state/constants.dart';
-import 'package:set_state/weather.dart';
+
 import 'package:http/http.dart' as http;
+
+import '../models/weather.dart';
+import '../utils/constants.dart';
 
 // this is a simplified class for handling api requests just to present as network layer
 // a lot of details and implementations ignored assuming you know how to handle it.
