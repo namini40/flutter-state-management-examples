@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:set_state/utils/database.dart';
 
 import '../networking/api_handler.dart';
 
@@ -100,7 +101,7 @@ class _LocationScreenState extends State<LocationScreen> {
     try {
       final weather = await _apiHandler.getWeatherByLocation(
           position.latitude, position.longitude);
-
+      Database.saveWeather(weather);
       setState(() {
         _message =
             'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
@@ -121,7 +122,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
     try {
       final weather = await _apiHandler.getWeatherByCityName(_cityName);
-
+      Database.saveWeather(weather);
       setState(() {
         _message =
             'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
