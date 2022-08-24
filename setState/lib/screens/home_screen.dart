@@ -4,6 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import '../networking/api_handler.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const id = 'home_screen';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override

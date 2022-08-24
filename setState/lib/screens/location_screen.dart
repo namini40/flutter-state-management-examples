@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LocationScreen extends StatefulWidget {
+  static const id = 'location_screen';
   const LocationScreen({Key? key}) : super(key: key);
 
   @override
