@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:set_state/screens/location_screen.dart';
 
 import '../networking/api_handler.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'home_screen';
+
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -18,36 +20,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('setState state management example app'),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                _message,
-                style: TextStyle(fontSize: 26),
-                overflow: TextOverflow.clip,
-                textAlign: TextAlign.center,
-              ),
-              ElevatedButton(
-                  onPressed: _onGetByLocationPressed,
-                  child: Text('get Weather by Location')),
-              TextField(
-                decoration: InputDecoration(hintText: 'city name'),
-                onChanged: (t) {
-                  _cityName = t;
-                },
-              ),
-              ElevatedButton(
-                  onPressed: _onGetByCityNamePressed,
-                  child: Text('get Weather by City Name')),
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('setState'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            _message,
+            style: TextStyle(fontSize: 26),
+            overflow: TextOverflow.clip,
+            textAlign: TextAlign.center,
           ),
-        ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, LocationScreen.id);
+              },
+              child: Text('Get New Data'))
+        ],
       ),
     );
   }

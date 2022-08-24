@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class LocationScreen extends StatefulWidget {
   static const id = 'location_screen';
+
   const LocationScreen({Key? key}) : super(key: key);
 
   @override
@@ -11,6 +12,10 @@ class LocationScreen extends StatefulWidget {
 class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Location'),
+      ),
+    );
   }
 }
