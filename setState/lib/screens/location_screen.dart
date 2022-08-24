@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:set_state/utils/constants.dart';
 
 import '../networking/api_handler.dart';
 
@@ -122,7 +121,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
     try {
       final weather = await _apiHandler.getWeatherByCityName(_cityName);
-      await saveToSharedPreferences(key, value)
+
       setState(() {
         _message =
             'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
@@ -135,6 +134,4 @@ class _LocationScreenState extends State<LocationScreen> {
       });
     }
   }
-  
-  
 }
