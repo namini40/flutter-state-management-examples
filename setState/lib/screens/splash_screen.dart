@@ -9,7 +9,17 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 2)).then((value) {});
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      body: Center(
+        child: FlutterLogo(),
+      ),
+    );
   }
 }
