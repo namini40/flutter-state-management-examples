@@ -36,14 +36,14 @@ as a flutter developer I wanted to explore different tools to manage state of an
 it's a simple app which forecasts weather in any location or city.
 the app contains these parts:
 - screens:
-  - splash screen ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
-  - main screen - showing selected location or city's weather forecast ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
-  - get location screen - for getting location either by location data from GPS or entered city name ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
+  - splash screen ![GitHub](https://img.shields.io/badge/status-Done-brightgreen)
+  - main screen - showing selected location or city's weather forecast ![GitHub](https://img.shields.io/badge/status-Done-brightgreen)
+  - get location screen - for getting location either by location data from GPS or entered city name ![GitHub](https://img.shields.io/badge/status-Done-brightgreen)
 - features:
-  - uses [openWatherMap](https://openweathermap.org/) APIs to retrive data from the internet using `geographical coordinates` or `city name` ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
-  - uses several data storage tools to store data ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
-  - supporting `dark` and `light` mode ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
-  - supporting internationalization ![GitHub](https://img.shields.io/badge/status-backlog-lightgrey)
+  - uses [openWatherMap](https://openweathermap.org/) APIs to retrive data from the internet using `geographical coordinates` or `city name` ![GitHub](https://img.shields.io/badge/status-Done-brightgreen)
+  - uses several data storage tools to store data ![GitHub](https://img.shields.io/badge/status-inProgress-blue)
+  - supporting `dark` and `light` mode ![GitHub](https://img.shields.io/badge/status-inProgress-blue)
+  - supporting internationalization ![GitHub](https://img.shields.io/badge/status-inProgress-blue)
 
 
 
