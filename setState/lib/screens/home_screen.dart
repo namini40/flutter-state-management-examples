@@ -37,8 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
             textAlign: TextAlign.center,
           ),
           ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, LocationScreen.id);
+              onPressed: () async {
+                Navigator.pushNamed(context, LocationScreen.id)
+                    .then((value) async {
+                  await _reloadWeather();
+                });
               },
               child: Text('Get New Data'))
         ],

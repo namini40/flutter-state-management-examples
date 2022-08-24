@@ -41,7 +41,9 @@ class _LocationScreenState extends State<LocationScreen> {
                   children: [
                     TextField(
                       decoration: InputDecoration(hintText: 'City name here!'),
-                      onChanged: (t) {},
+                      onChanged: (t) {
+                        _cityName = t;
+                      },
                     ),
                     ElevatedButton(
                         onPressed: _onGetByCityNamePressed,
@@ -101,7 +103,7 @@ class _LocationScreenState extends State<LocationScreen> {
     try {
       final weather = await _apiHandler.getWeatherByLocation(
           position.latitude, position.longitude);
-      Database.saveWeather(weather);
+      await Database.saveWeather(weather);
       setState(() {
         _message = weather.toString();
       });
@@ -121,7 +123,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
     try {
       final weather = await _apiHandler.getWeatherByCityName(_cityName);
-      Database.saveWeather(weather);
+      await Database.saveWeather(weather);
       setState(() {
         _message = weather.toString();
       });
