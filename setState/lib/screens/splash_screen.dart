@@ -17,9 +17,25 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: FlutterLogo(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FlutterLogo(size: 100),
+            SizedBox(
+              height: 50,
+            ),
+            Text('Flutter State Managemnet - SetState'),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'By Nas (github.com/namini40)',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
       ),
     );
   }
