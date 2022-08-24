@@ -4,4 +4,9 @@ class Weather {
   late String status;
 
   Weather(this.temperature, this.status);
+
+  @override
+  String toString() {
+    return 'Weather\n{\ntemperature: $temperature, status: $status\n}';
+  }
 }

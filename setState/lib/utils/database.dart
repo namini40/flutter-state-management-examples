@@ -32,13 +32,13 @@ class Database {
     await saveStringToSharedPreferences(statusKey, weather.status);
   }
 
-  static Future<Weather?> getWeather() async {
+  static Future<Weather?> readWeather() async {
     double? temp = await readNumberFromSharedPreferences(tempKey);
     String? status = await readTextFromSharedPreferences(statusKey);
     if (temp == null) {
       return null;
     } else {
-      return Weather(temp, status);
+      return Weather(temp, status!);
     }
   }
 }

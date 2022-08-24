@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:set_state/models/weather.dart';
 import 'package:set_state/screens/location_screen.dart';
-
-import '../networking/api_handler.dart';
+import 'package:set_state/utils/database.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'home_screen';
@@ -13,9 +13,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _cityName = '';
   String _message = 'no location or city name entered';
-  final _apiHandler = ApiHandler();
+
+  @override
+  void initState() {
+    super.initState();
+    _reloadWeather();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,5 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _reloadWeather() async {
+    Weather? weather = await Database.readWeather();
+    if (weather != null) {
+      setState(() {
+        _message = weather.toString();
+      });
+    }
   }
 }

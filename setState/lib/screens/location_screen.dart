@@ -103,8 +103,7 @@ class _LocationScreenState extends State<LocationScreen> {
           position.latitude, position.longitude);
       Database.saveWeather(weather);
       setState(() {
-        _message =
-            'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
+        _message = weather.toString();
       });
     } catch (e) {
       print(e);
@@ -124,8 +123,7 @@ class _LocationScreenState extends State<LocationScreen> {
       final weather = await _apiHandler.getWeatherByCityName(_cityName);
       Database.saveWeather(weather);
       setState(() {
-        _message =
-            'Weather:\ntemp: ${weather.temperature} F\nstatus: ${weather.status}';
+        _message = weather.toString();
       });
     } catch (e) {
       print(e);
